@@ -1,0 +1,13 @@
+fastlane_version '2.39.0'
+
+default_platform :ios
+
+desc 'Test lane to update RemoveSettingExample'
+lane :test do
+  xcodeproj = 'examples/RemoveSettingExample/RemoveSettingExample.xcodeproj'
+
+  remove_setting(
+    xcodeproj: xcodeproj,
+    key: 'DevelopmentMode'
+  )
+end
